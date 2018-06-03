@@ -1,6 +1,6 @@
 {
-	"name": "email-thing",
-	"description": "This Email Thing",
+	"name": "tesserae",
+	"description": "An email creator",
 	"version": "1.0.0",
 	"author": "An Duong <aduong@paypal.com>",
 	"dependencies": {

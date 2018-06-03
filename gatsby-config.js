@@ -1,7 +1,7 @@
 module.exports = {
 	siteMetadata: {
-		title: 'Email Thing by An Duong',
+		title: 'Tesserae: HTML Email Builder',
 	},
 	plugins: ['gatsby-plugin-react-helmet'],
-	pathPrefix: '/Email-Thing'
+	pathPrefix: '/Tesserae'
 }

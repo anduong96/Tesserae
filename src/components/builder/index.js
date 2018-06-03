@@ -16,6 +16,11 @@ export default class Builder extends Component {
         componentSelected: null
     }
 
+    onRegenerateState = (newState) => {
+        newState.map((item) => { item.id = generateID() })
+        this.setState({ canvas: newState })
+    }
+
     onDrop = (dropItem) => {
         const { removedIndex, addedIndex, payload, dropElement } = dropItem
         const canvas = deepCopy(this.state.canvas)
@@ -24,9 +29,7 @@ export default class Builder extends Component {
         if (removedIndex !== null) { itemToAdd = canvas.splice(removedIndex, 1)[0] }
         if (addedIndex !== null) { canvas.splice(addedIndex, 0, itemToAdd) }
 
-        //generating id for easy removal
-        canvas.map((item) => { item.id = generateID() })
-        this.setState({ canvas })
+        this.onRegenerateState(canvas)
     }
 
     onComponentFocus = ({ id }) => {
@@ -47,7 +50,7 @@ export default class Builder extends Component {
         const itemToAdd = deepCopy(canvas[index])
 
         canvas.splice(index + 1, 0, itemToAdd)
-        this.setState({ canvas })
+        this.onRegenerateState(canvas)
     }
 
     render = () => (
