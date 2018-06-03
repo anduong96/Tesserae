@@ -1,0 +1,59 @@
+.email-component {
+    min-width: 50px;
+    max-height: 80px !important;
+    background-color: transparent;
+    text-align: center;
+    display: flow-root;
+    vertical-align:middle;
+    margin: auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.email-component:hover,
+.email-component-stacks:hover {
+    background-color: rgb(241, 241, 241);
+}
+
+.title-icon,
+.text-icon,
+.location-icon,
+.image-icon,
+.click-icon,
+.divider-icon {
+    height: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.email-component-stacks {
+    width: 100%;
+    text-align: center;
+}
+
+.icon-container .triple-image-text>div>div {
+    width: 17px !important;
+}
+
+.icon-container .double-image-text>div>div {
+    width: initial;
+}
+
+.icon-container .image-text-right>img,
+.icon-container .image-text-left>img {
+    width: 25px;
+}
+
+
+.image-text-top {
+    display: inline-table;
+}
+
+.stack{
+    display: block;
+    height: 25px;
+}
+
+.is-being-drag {
+    background-color: lightgray !important
+}

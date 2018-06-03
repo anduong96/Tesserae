@@ -1,0 +1,76 @@
+.clicks-item {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    text-decoration: none !important;
+    color: white;
+}
+
+.canvas-is-hungry {
+    min-height: 50vh !important;
+}
+
+.clicks-item:hover,
+.clicks-item:focus,
+.clicks-item:active {
+    text-decoration: none !important;
+    color: white
+}
+
+.canvas-component:hover {
+    cursor: pointer;
+    border-color: skyblue;
+    border-width: 1px;
+    border-style: dashed;
+    max-width: 590px;
+    min-width: 590px;
+}
+
+.canvas-component .location {
+    height: 100px;
+    width: 100%
+}
+
+@-webkit-keyframes slide {
+    100% { left: 0; }
+}
+
+@keyframes slide {
+    100% { left: 0; }
+}
+
+.hovering-menu {
+    float: right;
+    z-index: 999999;
+    position: absolute;
+    right: -30px;
+    width: 30px;
+}
+
+
+
+.close-button:hover,
+.close-button:active,
+.close-button:focus {
+    color: red;
+    border-color: red;
+}
+
+.clone-button:hover,
+.clone-button:active,
+.clone-button:focus {
+    color: #5bc0de;
+    border-color: #5bc0de;
+}
+

@@ -1,0 +1,25 @@
+.nav-container {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+    text-align: center;
+    display: inline-flex;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(46, 46, 46);
+}
+
+.logo {
+    width: 100px;
+    padding-right: 10px;
+}
+
+.logo img {
+    width: 100px;
+    margin: 0;
+    padding: 0;
+}
+
+.steps-container {
+    display: block
+}

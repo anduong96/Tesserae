@@ -1,2 +1,0 @@
-webpackJsonp([60335399758886],{106:function(t,a){t.exports={data:{site:{siteMetadata:{title:"Email Creator by An Duong"}}},layoutContext:{}}}});
-//# sourceMappingURL=path----b8f19db38189dd7a181e.js.map
