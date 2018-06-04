@@ -13,7 +13,7 @@ export const Image = ({ onFocus, onSetCurrentHover,config, id }) => (
         onClick={() => onFocus({ id })}
         onMouseEnter={() => onSetCurrentHover(true, id)}
     >
-        <img src={config.src} style={{ margin: 0 }}/>
+        <img src={config.src} style={{ margin: 0, ...config.style }}/>
     </div>
 )
 

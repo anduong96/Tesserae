@@ -1,1 +1,36 @@
 
+.image-padding-settings {
+    width: 100%;
+    display: inline-flex;
+    padding: 10
+}
+
+.common-settings {
+    padding-left: 10px;
+}
+
+.background-settings,
+.padding-settings,
+.size-settings {
+    padding-bottom: 10px;
+}
+
+.editor-footer-btn-container {
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.editor-footer-clone-btn:hover,
+.editor-footer-clone-btn:active,
+.editor-footer-clone-btn:focus{
+    color: #18f018;
+    border-color: #18f018;
+}
+
+.editor-footer-remove-btn:hover,
+.editor-footer-remove-btn:active,
+.editor-footer-remove-btn:focus {
+    border-color: red;
+    color: red
+}

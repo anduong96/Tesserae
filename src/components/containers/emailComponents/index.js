@@ -10,7 +10,7 @@ import { TripleImageText, TripleImageTextIcon } from './tripleImageText'
 import { Location, LocationIcon } from './location'
 import { Click, ClickIcon } from './click'
 import { Blank, BlankIcon } from './blank'
-import { Menu } from '../extras'
+import { Menu } from '../hoverMenu'
 
 
 const CanvasComponentShort = (configs) => (

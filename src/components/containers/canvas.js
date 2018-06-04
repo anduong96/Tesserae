@@ -50,10 +50,17 @@ export default class EmailCanvas extends Component {
     )
 
     render = () => {
-        const { canvas, isDragging, onDrop } = this.props
+        const { canvas, isDragging, onDrop, canvasStyle } = this.props
         const { view } = this.state
+        const canvasIsWhite = canvasStyle.backgroundColor && canvasStyle.backgroundColor.toLowerCase() === '#ffffff'
+        const darkStyle = {
+            ...canvasStyle,
+            borderColor: 'gray',
+            borderStyle: 'solid',
+            borderWidth: 1
+        }
         return (
-            <div className={`canvas-wrapper${isDragging ? ' is-dragging':''}`} >
+            <div className={`canvas-wrapper${isDragging ? ' is-dragging':''}`} style={canvasIsWhite ? darkStyle : canvasStyle}>
                 <Radio.Group className={'view-radio-button'} defaultValue={view} onChange={this.onChangeView}>
                     <DesktopViewButton onClick={() => console.log(this.props)} />
                     <MobileViewButton />

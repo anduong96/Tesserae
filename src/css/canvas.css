@@ -67,10 +67,18 @@
     border-color: red;
 }
 
+.remove-button:hover,
+.remove-button:active,
+.remove-button:focus {
+    color: rgb(255, 186, 13);
+    border-color: rgb(255, 186, 13);
+}
+
+
 .clone-button:hover,
 .clone-button:active,
 .clone-button:focus {
-    color: #5bc0de;
-    border-color: #5bc0de;
+    color: #18f018;
+    border-color: #18f018;
 }
 

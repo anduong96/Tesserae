@@ -4,3 +4,18 @@
     display: flex;
     justify-content: stretch;
 }
+
+.ant-popover{
+    z-index: 9999999;
+}
+
+.ant-form-item-label {
+    padding: 0 !important;
+}
+.ant-form-item-label>label {
+    margin: 0;
+}
+
+.ant-form-item {
+    margin: 2px;
+}

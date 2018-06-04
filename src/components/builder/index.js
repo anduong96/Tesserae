@@ -13,7 +13,20 @@ export default class Builder extends Component {
     state = {
         components: builderSettings.components,
         canvas: [],
+        canvasStyle: { backgroundColor: 'rgb(224, 224, 224)' },
         componentSelected: null
+    }
+
+    onChangeCanvasStyle = (canvasStyle) => this.setState({ canvasStyle })
+
+    onChangeComponentConfig = (id, proposedConfig) => {
+        let canvas = deepCopy(this.state.canvas)
+        const target = canvas.filter((component) => component.id === id)[0]
+
+        Object.keys(proposedConfig).forEach(
+            (key) => { target.config[key] = proposedConfig[key] })
+
+        this.setState({ canvas })
     }
 
     onRegenerateState = (newState) => {
@@ -60,6 +73,8 @@ export default class Builder extends Component {
             onRemove={this.onRemove}
             onClone={this.onClone}
             onComponentFocus={this.onComponentFocus}
+            onChangeCanvasStyle={this.onChangeCanvasStyle}
+            onChangeComponentConfig={this.onChangeComponentConfig}
         />
     )
 }
