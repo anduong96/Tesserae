@@ -4,6 +4,7 @@ import { PanelHeader } from './editorComponents/panelHeader'
 import { GeneralSettings } from '../containers/editorComponents/generalSettings'
 import { NoSettings } from '../containers/editorComponents/noSettings'
 import { ImageSettings } from '../containers/editorComponents/imageSettings'
+import TitleSettings from '../containers/editorComponents/titleSettings'
 
 export default class Editor extends Component {
     onUserHoverOverHeader = (id, stillHovering) => this.setState({ currentHover: ( stillHovering ? id : null ) })
@@ -11,11 +12,11 @@ export default class Editor extends Component {
     onRenderCanvasSettings = () => this.props.canvas.map((item, index) => (
         <Collapse.Panel header={ <PanelHeader title={item.name} index={index +1}/> } key={item.id}>
             {{
-                image: <ImageSettings {...item} onConfigChange={this.props.onChangeComponentConfig}/>,
+                image: <ImageSettings {...item} onConfigChange={this.props.onChangeComponentConfig} />,
                 divider: <NoSettings />,
                 text: <NoSettings />,
                 blank: <NoSettings />,
-                title: <NoSettings />,
+                title: <TitleSettings {...item} onConfigChange={this.props.onChangeComponentConfig}/>,
                 button: <NoSettings />,
                 location: <NoSettings />,
                 imageTextLeft: <NoSettings />,
@@ -45,7 +46,7 @@ export default class Editor extends Component {
         return (
             <div className={'editor-wrapper'} >
                 <Collapse bordered={false} defaultActiveKey={['general-settings']}>
-                    <Collapse.Panel header={'General'} key={'general-settings'}>
+                    <Collapse.Panel header={'Container'} key={'general-settings'}>
                         <GeneralSettings {...{ canvasStyle, onChangeCanvasStyle }} />
                     </Collapse.Panel>
                     {this.onRenderCanvasSettings()}

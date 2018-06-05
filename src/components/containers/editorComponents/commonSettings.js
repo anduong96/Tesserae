@@ -2,7 +2,7 @@ import React from 'react'
 import { Divider, Button, Slider } from 'antd'
 import { NumberInput } from './numberInput'
 import { SliderInput } from './sliderInput'
-import { ColorPicker } from '../colorPicker'
+import { ColorPicker, ColorButtonSettings } from '../colorPicker'
 import { Column } from '../../commons/column'
 
 const dividerStyle = { marginTop: 0, marginBottom: 5 }
@@ -15,7 +15,7 @@ const BackgroundSettings = ({ style, onStyleChange }) => (
                 onChange={(color) => onStyleChange({ ...style, backgroundColor: color.hex })}
                 color={style.backgroundColor || 'white'}
             >
-                <Button style={{ backgroundColor: style.backgroundColor || 'white', width: '100%'}} />
+                <Button style={{ backgroundColor: style.backgroundColor || 'white', ...ColorButtonSettings }} />
             </ColorPicker>
         </Column>
     </div>
@@ -40,7 +40,6 @@ const SizeSettings = ({ style, onStyleChange }) => (
         </Column>
     </div>
 )
-
 
 const PaddingSettings = ({ style, onStyleChange }) => (
     <div className={'padding-settings row'}>
@@ -80,14 +79,24 @@ const PaddingSettings = ({ style, onStyleChange }) => (
     </div>
 )
 
+const FontSettings = () => (
+    <div className={'row'}>
+        <Column size={3} ><Button type="dashed" shape="circle" >A</Button></Column>
+        <Column size={3} ><Button type="dashed" shape="circle" >B</Button></Column>
+        <Column size={3} ><Button type="dashed" shape="circle" >C</Button></Column>
+        <Column size={3} ><Button type="dashed" shape="circle" >D</Button></Column>
+    </div>
+)
+
 
 export const CommonSettings = ({
     id,
     config,
     onConfigChange,
-    noBackground,
-    noSize,
-    noPadding
+    yesBackground,
+    yesSize,
+    yesPadding,
+    yesFont
 }) => {
     const propsSettings = {
         style: config.style,
@@ -95,9 +104,10 @@ export const CommonSettings = ({
     }
     return (
         <div className={'common-settings'}>
-            { !noBackground && <BackgroundSettings {...propsSettings}/> }
-            { !noSize &&  <SizeSettings {...propsSettings}/> }
-            { !noPadding && <PaddingSettings {...propsSettings}/>}
+            { yesBackground && <BackgroundSettings {...propsSettings}/> }
+            { yesSize &&  <SizeSettings {...propsSettings} /> }
+            { yesPadding && <PaddingSettings {...propsSettings} />}
+            { yesFont && <FontSettings {...propsSettings} /> }
         </div>
     )
 }

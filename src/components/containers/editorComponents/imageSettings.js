@@ -18,8 +18,8 @@ export const ImageSettings = ({
             />
         </FormWrapper>
         <Collapse bordered={false} defaultActiveKey={['style']}>
-            <Collapse.Panel header='Advance Settings' key={'style'}>
-                <CommonSettings {...{ name, id, config, onConfigChange }} noSize noBackground/>
+            <Collapse.Panel header='Additional Settings' key={'style'}>
+                <CommonSettings {...{ name, id, config, onConfigChange }} yesPadding/>
             </Collapse.Panel>
         </Collapse>
     </div>

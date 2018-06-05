@@ -7,8 +7,13 @@ export const ColorPicker = ({ color, onChange, children }) => (
         style={{ padding: 0 }}
         content={<ColorMenu color={color} onChangeComplete={onChange}/>}
         trigger={'click'}
-        placement={'right'}
+        placement={'left'}
     >
         {children}
     </Popover>
 )
+
+export const ColorButtonSettings = {
+    width: '100%',
+    height: 15
+}

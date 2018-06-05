@@ -4,13 +4,15 @@ const TITLE = {
         title: {
             text: 'This is a title',
             style: {
-                textAlign: 'center'
+                textAlign: 'center',
+                margin: 0
             }
         },
         subtitle: {
             text: 'This is a subtitle',
             style: {
-                textAlign: 'center'
+                textAlign: 'center',
+                margin: 0
             }
         },
         style: {

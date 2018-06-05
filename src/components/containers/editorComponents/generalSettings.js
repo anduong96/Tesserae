@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from 'antd'
 import { FormWrapper } from './form'
-import { ColorPicker } from '../colorPicker'
+import { ColorPicker, ColorButtonSettings } from '../colorPicker'
 
 export const GeneralSettings = ({
     canvasStyle,
@@ -12,7 +12,7 @@ export const GeneralSettings = ({
             onChange={(color) => onChangeCanvasStyle({ backgroundColor: color.hex })}
             color={canvasStyle.backgroundColor}
         >
-            <Button style={{ ...canvasStyle, width: '100%'}} />
+            <Button style={{ ...canvasStyle, ...ColorButtonSettings }} />
         </ColorPicker>
     </FormWrapper>
 )
