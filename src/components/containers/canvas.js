@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Container, Draggable } from 'react-smooth-dnd'
-import { Radio, Icon } from 'antd'
 import { CanvasComponents } from './emailComponents'
 import {
     onAddToCanvas,
@@ -12,26 +11,12 @@ import {
     onFocusOnCanvasComponent
 } from '../../store/canvasContainer/actions'
 
-const DesktopViewButton = (settings) => (
-    <Radio.Button value={'desktop'} {...settings}>
-        <Icon type={'laptop'} />
-    </Radio.Button>
-)
-
-const MobileViewButton = (settings) => (
-    <Radio.Button value={'mobile'} {...settings}>
-        <Icon type={'mobile'} />
-    </Radio.Button>
-)
-
-const getCanvas = () => document.getElementsByClassName('canvas-wrapper')[0].children[1]
+// This is to handle if item is inside canvas or not
+const getCanvas = () => document.getElementsByClassName('canvas-wrapper')[0].children[0]
 const canvasIsHungry = () => getCanvas().childElementCount === 0
 const showCanvasHunger = () => getCanvas().classList.add('canvas-is-hungry')
 const showCanvasIsNotHungry = () => getCanvas().classList.remove('canvas-is-hungry')
-const handleCanvasHunger = () => {
-    if (canvasIsHungry()) showCanvasHunger()
-    else showCanvasIsNotHungry()
-}
+const handleCanvasHunger = () => canvasIsHungry() ? showCanvasHunger() : showCanvasIsNotHungry()
 
 export class EmailCanvas extends Component {
     componentDidMount = () => handleCanvasHunger()
@@ -55,7 +40,9 @@ export class EmailCanvas extends Component {
         const { canvas, canvasStyle } = canvasContainer
         const canvasIsWhite =
             canvasStyle.backgroundColor
-            && canvasStyle.backgroundColor.toLowerCase() === '#ffffff'
+            && '#ffffff' === canvasStyle
+                .backgroundColor
+                .toLowerCase()
 
         const darkStyle = {
             ...canvasStyle,
@@ -66,11 +53,6 @@ export class EmailCanvas extends Component {
 
         return (
             <div className={`canvas-wrapper${isDragging ? ' is-dragging':''}`} style={canvasIsWhite ? darkStyle : canvasStyle}>
-                <Radio.Group className={'view-radio-button'} defaultValue={"desktop"} onChange={this.onChangeView}>
-                    <DesktopViewButton onClick={() => console.log(this.props)} />
-                    <MobileViewButton />
-                </Radio.Group>
-
                 <Container
                     orientation={'vertical'}
                     dropClass="opacity-ghost-drop"
