@@ -7,10 +7,10 @@ export const ImageIcon = () => (
     </div>
 )
 
-export const Image = ({ onFocus, onSetCurrentHover,config, id }) => (
+export const Image = ({ onSetCurrentHover,config, id }) => (
     <div
         className={'canvas-component image'}
-        onClick={() => onFocus({ id })}
+        onClick={() => console.log({ id })}
         onMouseEnter={() => onSetCurrentHover(true, id)}
     >
         <img src={config.src} style={{ margin: 0, ...config.style }}/>

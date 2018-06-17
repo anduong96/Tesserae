@@ -1,10 +1,10 @@
 import React from 'react'
 import clickSVG from '../../../img/icons/click.svg'
 
-export const Click = ({ onFocus, onSetCurrentHover, config, id }) => (
+export const Click = ({ onSetCurrentHover, config, id }) => (
     <div className={'canvas-component clicks'}
         style={config.style}
-        onClick={() => onFocus({ id })}
+        onClick={() => console.log({ id })}
         onMouseEnter={() => onSetCurrentHover(true, id)}
     >
         {config.buttons.map(( item, index ) =>{

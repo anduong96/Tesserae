@@ -10,11 +10,11 @@ export const ImageTextLeftIcon = () => (
 )
 
 
-export const ImageTextLeft = ({ onFocus, onSetCurrentHover, config, id }) => (
+export const ImageTextLeft = ({ onSetCurrentHover, config, id }) => (
     <div
         className={'canvas-component image-text-left'}
         style={config.style}
-        onClick={() => onFocus({ id })}
+        onClick={() => console.log({ id })}
         onMouseEnter={() => onSetCurrentHover(true, id)}
     >
         <p style={config.descript.style}>{config.descript.text}</p>

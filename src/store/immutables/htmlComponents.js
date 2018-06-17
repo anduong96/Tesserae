@@ -217,7 +217,7 @@ const BLANK = {
 }
 
 
-export const builderSettings = {
+export const builder = {
     components: [
         TITLE,
         TEXT,
@@ -233,4 +233,3 @@ export const builderSettings = {
     ]
 }
 
-export default builderSettings;

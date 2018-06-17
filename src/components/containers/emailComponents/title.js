@@ -7,11 +7,11 @@ export const TitleIcon = () => (
     </div>
 )
 
-export const Title = ({ onFocus, onSetCurrentHover, config, id }) => (
+export const Title = ({ onSetCurrentHover, config, id }) => (
     <div
         className={'canvas-component title'}
         style={config.style}
-        onClick={() => onFocus({ id })}
+        onClick={() => console.log({ id })}
         onMouseEnter={() => onSetCurrentHover(true, id)}
     >
         <h1 style={config.title.style}>{config.title.text}</h1>

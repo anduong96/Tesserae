@@ -7,10 +7,10 @@ export const TextIcon = () => (
     </div>
 )
 
-export const Text = ({ onFocus, onSetCurrentHover, config, id }) => (
+export const Text = ({ onSetCurrentHover, config, id }) => (
     <div
         className={'canvas-component text'}
-        onClick={() => onFocus({ id })}
+        onClick={() => console.log({ id })}
         onMouseEnter={() => onSetCurrentHover(true, id)}
     >
         <p style={config.style}>{config.text}</p>

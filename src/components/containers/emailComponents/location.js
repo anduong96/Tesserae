@@ -7,10 +7,10 @@ export const LocationIcon = () => (
     </div>
 )
 
-export const Location = ({ onFocus, onSetCurrentHover, config, id }) => (
+export const Location = ({ onSetCurrentHover, config, id }) => (
     <div
         className={'canvas-component location'}
-        onClick={() => onFocus({ id })}
+        onClick={() => console.log({ id })}
         onMouseEnter={() => onSetCurrentHover(true, id)}
     >
         <div style={config.style}>

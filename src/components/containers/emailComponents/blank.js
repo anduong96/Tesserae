@@ -6,10 +6,9 @@ export const BlankIcon = () => (
     </div>
 )
 
-export const Blank = ({ onFocus, onSetCurrentHover, id }) => (
+export const Blank = ({ onSetCurrentHover, id }) => (
     <div
         className={'canvas-component blank'}
-        onClick={() => onFocus({ id })}
         onMouseEnter={() => onSetCurrentHover(true, id)}
     >
         <br />

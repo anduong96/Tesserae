@@ -7,10 +7,10 @@ export const DividerIcon = () => (
     </div>
 )
 
-export const Divider = ({ onFocus, onSetCurrentHover, id }) => (
+export const Divider = ({ onSetCurrentHover, id }) => (
     <div
         className={'canvas-component-divider'}
-        onClick={() => onFocus({ id })}
+        onClick={() => console.log({ id })}
         onMouseEnter={() => onSetCurrentHover(true, id)}
     >
         <hr />

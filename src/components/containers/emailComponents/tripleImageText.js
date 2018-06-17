@@ -11,11 +11,11 @@ export const TripleImageTextIcon = () => (
     </div>
 )
 
-export const TripleImageText = ({ onFocus, onSetCurrentHover, config, id }) => (
+export const TripleImageText = ({ onSetCurrentHover, config, id }) => (
     <div
         className={'canvas-component triple-image-text'}
         style={config.style}
-        onClick={() => onFocus({ id })}
+        onClick={() => console.log({ id })}
         onMouseEnter={() => onSetCurrentHover(true, id)}
     >
         { config.options.map(( item, index ) => <ImageTextTop {...item} key={index}/> )}

@@ -10,11 +10,11 @@ export const DoubleImageTextIcon = () => (
     </div>
 )
 
-export const DoubleImageText = ({ onFocus, onSetCurrentHover, config, id }) => (
+export const DoubleImageText = ({ onSetCurrentHover, config, id }) => (
     <div
         className={'canvas-component double-image-text'}
         style={config.style}
-        onClick={() => onFocus({ id })}
+        onClick={() => console.log({ id })}
         onMouseEnter={() => onSetCurrentHover(true, id)}
     >
         { config.options.map(( item, index ) => <ImageTextTop {...item} key={index}/> )}

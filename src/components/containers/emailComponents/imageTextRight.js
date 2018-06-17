@@ -9,11 +9,11 @@ export const ImageTextRightIcon = () => (
     </div>
 )
 
-export const ImageTextRight = ({ onFocus, onSetCurrentHover, config, id }) => (
+export const ImageTextRight = ({ onSetCurrentHover, config, id }) => (
     <div
         className={'canvas-component image-text-right'}
         style={config.style}
-        onClick={() => onFocus({ id })}
+        onClick={() => console.log({ id })}
         onMouseEnter={() => onSetCurrentHover(true, id)}
     >
         <p style={config.descript.style}>{config.descript.text}</p>

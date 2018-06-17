@@ -1,7 +1,16 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import { Container, Draggable } from 'react-smooth-dnd'
 import { Radio, Icon } from 'antd'
 import { CanvasComponents } from './emailComponents'
+import {
+    onAddToCanvas,
+    onRemoveFromCanvas,
+    onCloneFromCanvas,
+    onChangeComponentConfig,
+    onFocusOnCanvasComponent
+} from '../../store/canvasContainer/actions'
 
 const DesktopViewButton = (settings) => (
     <Radio.Button value={'desktop'} {...settings}>
@@ -24,25 +33,17 @@ const handleCanvasHunger = () => {
     else showCanvasIsNotHungry()
 }
 
-export default class EmailCanvas extends Component {
-    state = {
-        view: 'desktop',
-        currentHover: null
-    }
-
+export class EmailCanvas extends Component {
     componentDidMount = () => handleCanvasHunger()
     componentDidUpdate = () => handleCanvasHunger()
-
-    onChangeView = ({ target }) => this.setState({ view: target.value })
-    onSetCurrentHover = (isHovering, id) => this.setState({ currentHover: isHovering? id : null })
     onGenerateCanvasItems = (configurations, index) => (
         <Draggable key={index}>
             <CanvasComponents
                 onFocus={this.props.onComponentFocus}
-                onSetCurrentHover={this.onSetCurrentHover}
-                onRemove={this.props.onRemove}
-                onClone={this.props.onClone}
-                currentHover={this.state.currentHover}
+                onSetCurrentHover={this.props.onFocusOnCanvasComponent}
+                onRemove={this.props.onRemoveFromCanvas}
+                onClone={this.props.onCloneFromCanvas}
+                currentHover={this.props.canvasContainer.isHoveringOver}
                 configurations={configurations}
                 index={index}
             />
@@ -50,27 +51,32 @@ export default class EmailCanvas extends Component {
     )
 
     render = () => {
-        const { canvas, isDragging, onDrop, canvasStyle } = this.props
-        const { view } = this.state
-        const canvasIsWhite = canvasStyle.backgroundColor && canvasStyle.backgroundColor.toLowerCase() === '#ffffff'
+        const { canvasContainer, isDragging, onAddToCanvas } = this.props
+        const { canvas, canvasStyle } = canvasContainer
+        const canvasIsWhite =
+            canvasStyle.backgroundColor
+            && canvasStyle.backgroundColor.toLowerCase() === '#ffffff'
+
         const darkStyle = {
             ...canvasStyle,
             borderColor: 'gray',
             borderStyle: 'solid',
             borderWidth: 1
         }
+
         return (
             <div className={`canvas-wrapper${isDragging ? ' is-dragging':''}`} style={canvasIsWhite ? darkStyle : canvasStyle}>
-                <Radio.Group className={'view-radio-button'} defaultValue={view} onChange={this.onChangeView}>
+                <Radio.Group className={'view-radio-button'} defaultValue={"desktop"} onChange={this.onChangeView}>
                     <DesktopViewButton onClick={() => console.log(this.props)} />
                     <MobileViewButton />
                 </Radio.Group>
+
                 <Container
                     orientation={'vertical'}
                     dropClass="opacity-ghost-drop"
                     shouldAcceptDrop={() => true}
                     getChildPayload={(index) =>  canvas[index]}
-                    onDrop={onDrop}
+                    onDrop={(dropItem) => onAddToCanvas(dropItem)}
                     lockAxis={'y'}
                 >
                     { canvas.map(this.onGenerateCanvasItems)}
@@ -79,3 +85,24 @@ export default class EmailCanvas extends Component {
         )
     }
 }
+
+
+const mapStateToProps = (state) => ({
+    isDragging: state.optionsContainer.isDragging,
+    canvasContainer: state.canvasContainer
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    ...bindActionCreators({
+        onAddToCanvas,
+        onRemoveFromCanvas,
+        onCloneFromCanvas,
+        onChangeComponentConfig,
+        onFocusOnCanvasComponent
+    }, dispatch),
+})
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(EmailCanvas)
