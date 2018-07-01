@@ -16,4 +16,6 @@ export const MJML = {
     SECTION: 'mj-section',
     COLUMN: 'mj-column',
     IMAGE: 'mj-image',
+    ATTRIBUTES: 'mj-attributes',
+    ALL: 'mj-all'
 }

@@ -10,11 +10,25 @@ export const mjmlHeader = () => mjmlTemplate({
         mjmlTemplate({
             tag: MJML.STYLE,
             attributes: {},
-            content: `@media all and (max-width: 480px) {
+            content: `
+            @media all and (max-width: 480px) {
                 td {
-                    width: 100%!important;
+                    width: 100% !important;
                 }
+            }
+            td {
+                padding: 0 !important;
+            }
+            .mj-container {
+                padding-top: 20px;
+                padding-bottom: 20px;
             }`
+        }),
+        mjmlTemplate({
+            tag: MJML.ALL,
+            attributes: {
+                padding: '0px'
+            }
         })
     ]
 })

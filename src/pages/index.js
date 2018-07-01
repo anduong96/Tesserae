@@ -12,11 +12,10 @@ import '../css/canvas.css'
 import '../css/editor.css'
 
 const LoadingSpinner = () => (
-	<div className={''}>
-		<PacmanLoader color={'#123abc'} loading />
+	<div className={'overlay-spinner'}>
+		<PacmanLoader color={'#c141f4'} loading />
 	</div>
 )
-
 
 export class IndexPage extends Component {
 	componentDidMount = () => this.props.onSetCanvas(
@@ -24,7 +23,7 @@ export class IndexPage extends Component {
 		? JSON.parse(window.localStorage.getItem('tesseraeCanvas'))
 		: [])
 
-	render = () => this.props.canvas ? <EmailBuilder /> : <LoadingSpinner />
+	render = () =>  this.props.canvas ? <EmailBuilder/> : <LoadingSpinner />
 }
 
 const mapStateToProps = (state) => {
