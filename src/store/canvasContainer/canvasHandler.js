@@ -12,6 +12,7 @@ export default class canvasHandler {
         //generating new ID for easy handling
         newCanvas.map((item) => { item.id =  generateID()})
 
+        localStorage.setItem('tesseraeCanvas', JSON.stringify(newCanvas))
         return newCanvas
     }
 
@@ -19,6 +20,7 @@ export default class canvasHandler {
         const newCanvas = deepCopy(canvas)
             .filter((item) => item.id != id)
 
+        localStorage.setItem('tesseraeCanvas', newCanvas)
         return newCanvas
     }
 
@@ -31,6 +33,7 @@ export default class canvasHandler {
         newCanvas.splice(index + 1, 0, itemToAdd)
         newCanvas.map((item) => { item.id =  generateID()})
 
+        localStorage.setItem('tesseraeCanvas', JSON.stringify(newCanvas))
         return newCanvas
     }
 
@@ -38,9 +41,10 @@ export default class canvasHandler {
         const newCanvas = deepCopy(canvas)
         const target = newCanvas.filter((item) => item.id === id)[0]
 
-        Object.keys(proposedConfig).forEach(
-            (key) => { target.config[key] = proposedConfig[key] })
+        Object.keys(proposedConfig)
+            .forEach((key) => { target.config[key] = proposedConfig[key] })
 
+        localStorage.setItem('tesseraeCanvas', JSON.stringify(newCanvas))
         return newCanvas
     }
 }
