@@ -3,10 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Container, Draggable } from 'react-smooth-dnd'
 import { OptionComponents } from './emailComponents'
-import {
-    optionDragStart,
-    optionDragEnd
-} from '../../store/optionsContainer/actions';
+import { optionDragStart, optionDragEnd } from '../../store/optionsContainer/actions';
 
 export class OptionsContainer extends Component {
     onDragStart = ({ payload }) => this.props.optionDragStart(payload.name || null)

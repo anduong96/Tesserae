@@ -1,28 +1,50 @@
-import React from 'react'
-import { Steps } from 'antd'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import axios from 'axios'
+import { Button } from 'antd'
+import { makeMJML } from '../mjmlEngine'
+import { parseCanvasIntoMJML } from './containers/emailComponents/mjmlHelper'
+import { downloadFile } from './utils'
 import '../css/nav.css'
 
-// Probably going to move this out because I cant passed functions through it
-// TODO replace this later
-const { Step } = Steps
-const Header = ({ siteTitle }) => (
-	<div className={'nav-container row'}>
-		<div className={'logo col-sm-12 col-md-2'}>
-			//TODO Add title
-			{/* <img src={fillerSRC} /> */}
-			{/* {siteTitle} */}
-		</div>
-		{/* <div className={'nav buttons col-sm-12 col-md-7'}>
-			todo
-		</div>
-		<div className={'steps-container col-sm-0 col-md-3'}>
-			<Steps current={1} size={'small'}>
-				{['Select', 'Build', 'Download']
-					.map((label, index) => <Step title={label} key={index}/>)
-				}
-			</Steps>
-		</div> */}
-	</div>
-)
+class Header extends Component {
+    state = {}
 
-export default Header
+    parseToMJML = () => makeMJML({
+        canvas: { ...this.props.canvasContainer.canvasStyle },
+        contents: parseCanvasIntoMJML(this.props.canvasContainer.canvas)
+    })
+
+    downloadContent = () => {
+        axios.post(
+            'https://api.mjml.io/v1/render',
+            JSON.stringify({ mjml: JSON.stringify(this.parseToMJML()) }),
+            { auth: { username: '*ENCRYPTED_ID*', password: '*ENCRYPTED_PASSWORD*' }}
+        ).then((res) => {
+            if(res.data) {
+                this.setState({ ...res.data }, () => downloadFile('tesserae.html', res.data.html, 'html'))
+            }
+        })
+    }
+
+    render = () => (
+        <div className={'nav-container row'}>
+            <div className={'logo col-sm-12 col-md-2'}>{this.props.siteTitle}</div>
+            <div className={'nav-button-group col-sm-12 col-md-10'}>
+                <Button onClick={this.downloadContent} >Download</Button>
+                <Button onClick={() => console.log(this.props.canvasContainer.canvas)} >Test</Button>
+                <Button onClick={() => console.log(JSON.stringify({ mjml: JSON.stringify(this.parseToMJML()) }))} >Test API</Button>
+                <Button onClick={() => console.log(JSON.stringify(this.parseToMJML()))} >Test Engine</Button>
+            </div>
+        </div>
+    )
+}
+
+const mapStateToProps = (state) => ({
+    canvasContainer: state.canvasContainer
+})
+
+export default connect(
+    mapStateToProps,
+    null
+)(Header)

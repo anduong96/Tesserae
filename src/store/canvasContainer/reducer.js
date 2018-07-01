@@ -2,17 +2,21 @@ import ACTIONS from '../types';
 import canvasHandler from './canvasHandler'
 
 const initialState = {
-    canvas: [],
+    canvas: undefined,
     canvasStyle: { backgroundColor: 'rgb(224, 224, 224)' },
     isDesktopView: true,
     isHoveringOver: null
 };
 
 const optionsContainer = (state = initialState, action) => {
-    let canvas
     switch (action.type) {
-        case ACTIONS.CHANGE_CANVAS_STYLE:
+        case ACTIONS.SET_CANVAS:
+            return {
+                ...state,
+                canvas: action.canvas
+            }
 
+        case ACTIONS.CHANGE_CANVAS_STYLE:
             return {
                 ...state,
                 canvasStyle: action.style

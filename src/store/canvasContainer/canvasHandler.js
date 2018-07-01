@@ -3,7 +3,7 @@ import { generateID, deepCopy } from '../utils'
 export default class canvasHandler {
     static onAdd = function(canvas, dropItem) {
         const { removedIndex, addedIndex, payload } = dropItem
-        const newCanvas = deepCopy(canvas)
+        const newCanvas = canvas ? deepCopy(canvas) : []
         let itemToAdd = payload
 
         if (removedIndex !== null) { itemToAdd = newCanvas.splice(removedIndex, 1)[0] }
@@ -12,6 +12,7 @@ export default class canvasHandler {
         //generating new ID for easy handling
         newCanvas.map((item) => { item.id =  generateID()})
 
+        localStorage.setItem('tesseraeCanvas', JSON.stringify(newCanvas))
         return newCanvas
     }
 
@@ -19,11 +20,11 @@ export default class canvasHandler {
         const newCanvas = deepCopy(canvas)
             .filter((item) => item.id != id)
 
+        localStorage.setItem('tesseraeCanvas', newCanvas)
         return newCanvas
     }
 
     static onClone = function(canvas, id) {
-        console.log({ canvas })
         const newCanvas = deepCopy(canvas)
         const index = newCanvas.findIndex((item) => item.id === id)
         const itemToAdd = deepCopy(newCanvas[index])
@@ -31,6 +32,7 @@ export default class canvasHandler {
         newCanvas.splice(index + 1, 0, itemToAdd)
         newCanvas.map((item) => { item.id =  generateID()})
 
+        localStorage.setItem('tesseraeCanvas', JSON.stringify(newCanvas))
         return newCanvas
     }
 
@@ -38,9 +40,10 @@ export default class canvasHandler {
         const newCanvas = deepCopy(canvas)
         const target = newCanvas.filter((item) => item.id === id)[0]
 
-        Object.keys(proposedConfig).forEach(
-            (key) => { target.config[key] = proposedConfig[key] })
+        Object.keys(proposedConfig)
+            .forEach((key) => { target.config[key] = proposedConfig[key] })
 
+        localStorage.setItem('tesseraeCanvas', JSON.stringify(newCanvas))
         return newCanvas
     }
 }

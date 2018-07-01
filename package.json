@@ -4,16 +4,12 @@
 	"version": "1.0.0",
 	"author": "An Duong <aduong@paypal.com>",
 	"dependencies": {
-		"@axetroy/react-download": "^1.1.1",
 		"antd": "^3.6.1",
 		"axios": "^0.15.3",
-		"fs": "0.0.1-security",
 		"gatsby": "^1.9.247",
 		"gatsby-link": "^1.6.40",
 		"gatsby-plugin-react-helmet": "^2.0.10",
 		"gatsby-plugin-styled-components": "^2.0.11",
-		"mjml": "^3.3.0",
-		"mjml-core": "^3.3.0",
 		"npm": "^6.1.0",
 		"prop-types": "^15.6.1",
 		"react-color": "^2.14.1",
@@ -21,13 +17,14 @@
 		"react-helmet": "^5.2.0",
 		"react-redux": "^5.0.7",
 		"react-smooth-dnd": "^0.4.8",
+		"react-spinners": "^0.3.2",
 		"redux": "^4.0.0",
 		"redux-logger": "^3.0.6"
 	},
 	"license": "MIT",
 	"scripts": {
 		"build": "gatsby build",
-		"develop": "gatsby develop",
+		"dev": "gatsby develop",
 		"format": "prettier --write 'src/**/*.js'",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"deploy": "gatsby build --prefix-paths && gh-pages -d public"

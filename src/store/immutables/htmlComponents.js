@@ -56,9 +56,12 @@ const BUTTON = {
 const IMAGE = {
     name: 'image',
     config: {
-        src: 'http://via.placeholder.com/590x200',
+        src: 'http://via.placeholder.com/600x200',
         style: {
-
+            paddingTop: 0,
+            paddingBottom: 0,
+            paddingLeft: 0,
+            paddingRight: 0
         }
     }
 }
@@ -67,7 +70,7 @@ const IMAGE_TEXT_RIGHT = {
     name: 'imageTextRight',
     config: {
         image: {
-            src: 'http://via.placeholder.com/290x200',
+            src: 'http://via.placeholder.com/300x200',
             style: {
                 paddingLeft: 5,
                 margin: 0,
@@ -91,7 +94,7 @@ const IMAGE_TEXT_LEFT = {
     name: 'imageTextLeft',
     config: {
         image: {
-            src: 'http://via.placeholder.com/290x200',
+            src: 'http://via.placeholder.com/300x200',
             style: {
                 paddingRight: 5,
                 margin: 0,

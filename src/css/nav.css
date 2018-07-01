@@ -6,6 +6,7 @@
     border-bottom-style: solid;
     border-bottom-width: 1px;
     border-bottom-color: rgb(46, 46, 46);
+    height: 100%;
 }
 
 .logo {
@@ -21,4 +22,8 @@
 
 .steps-container {
     display: block
+}
+
+.nav-button-group {
+    text-align: center;
 }

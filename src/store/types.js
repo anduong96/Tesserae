@@ -1,11 +1,5 @@
 const ACTIONS = `
     #-----------------------------------------------
-    # TEST
-    #-----------------------------------------------
-    INCREMENT_COUNTER
-    DECREMENT_COUNTER
-
-    #-----------------------------------------------
     # OPTIONS CONTAINER
     #-----------------------------------------------
     OPTION_DRAG_START
@@ -14,6 +8,7 @@ const ACTIONS = `
     #-----------------------------------------------
     # CANVAS CONTAINER
     #-----------------------------------------------
+    SET_CANVAS
     CHANGE_CANVAS_STYLE
     ADD_TO_CANVAS
     REMOVE_FROM_CANVAS
