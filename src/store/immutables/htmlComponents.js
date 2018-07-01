@@ -40,7 +40,7 @@ const BUTTON = {
         buttons: [
             {
                 text: 'Button',
-                href: 'https://github.paypal.com/aduong',
+                href: 'https://github.com/anduong96',
                 style: {
                     backgroundColor: 'red'
                 },
@@ -56,7 +56,7 @@ const BUTTON = {
 const IMAGE = {
     name: 'image',
     config: {
-        src: 'http://via.placeholder.com/600x200',
+        src: 'https://imgplaceholder.com/600x200/a496ff/333333/fa-image',
         style: {
             paddingTop: 0,
             paddingBottom: 0,
@@ -70,7 +70,7 @@ const IMAGE_TEXT_RIGHT = {
     name: 'imageTextRight',
     config: {
         image: {
-            src: 'http://via.placeholder.com/300x200',
+            src: 'https://imgplaceholder.com/300x200/a496ff/333333/fa-image',
             style: {
                 paddingLeft: 5,
                 margin: 0,
@@ -94,7 +94,7 @@ const IMAGE_TEXT_LEFT = {
     name: 'imageTextLeft',
     config: {
         image: {
-            src: 'http://via.placeholder.com/300x200',
+            src: 'https://imgplaceholder.com/300x200/a496ff/333333/fa-image',
             style: {
                 paddingRight: 5,
                 margin: 0,
@@ -120,7 +120,7 @@ const DOUBLE_IMAGE_TEXT = {
         options: [
             {
                 image: {
-                    src: 'http://via.placeholder.com/280x150',
+                    src: 'https://imgplaceholder.com/280x150/a496ff/333333/fa-image',
                     style: {
                         padding: 5
                     }
@@ -133,7 +133,7 @@ const DOUBLE_IMAGE_TEXT = {
             },
             {
                 image: {
-                    src: 'http://via.placeholder.com/280x150',
+                    src: 'https://imgplaceholder.com/280x150/a496ff/333333/fa-image',
                     style: {
                         padding: 5
                     }
@@ -155,10 +155,12 @@ const DOUBLE_IMAGE_TEXT = {
 const TRIPLE_IMAGE_TEXT = {
     name: 'tripleImageText',
     config: {
+
+
         options: [
             {
                 image: {
-                    src: 'http://via.placeholder.com/180x100',
+                    src: 'https://imgplaceholder.com/180x100/a496ff/333333/fa-image',
                     style: {
                         padding: 5
                     }
@@ -171,7 +173,7 @@ const TRIPLE_IMAGE_TEXT = {
             },
             {
                 image: {
-                    src: 'http://via.placeholder.com/180x100',
+                    src: 'https://imgplaceholder.com/180x100/a496ff/333333/fa-image',
                     style: {
                         padding: 5
                     }
@@ -184,7 +186,7 @@ const TRIPLE_IMAGE_TEXT = {
             },
             {
                 image: {
-                    src: 'http://via.placeholder.com/180x100',
+                    src: 'https://imgplaceholder.com/180x100/a496ff/333333/fa-image',
                     style: {
                         padding: 5
                     }
