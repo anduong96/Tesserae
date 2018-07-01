@@ -18,12 +18,27 @@ const LoadingSpinner = () => (
 )
 
 export class IndexPage extends Component {
-	componentDidMount = () => this.props.onSetCanvas(
-		typeof window !== 'undefined'
-		? JSON.parse(window.localStorage.getItem('tesseraeCanvas'))
-		: [])
+	componentDidMount = () => {
+		let canvas = []
+		if ( typeof window !== 'undefined' ) {
+			const canvasInStorage = window.localStorage.getItem('tesseraeCanvas');
+			if (canvasInStorage) {
+				canvas = JSON.parse(canvasInStorage)
+			} else {
+				window.localStorage.setItem('tesseraeCanvas', JSON.stringify([]))
+				canvas = []
+			}
+		}
 
-	render = () =>  this.props.canvas ? <EmailBuilder/> : <LoadingSpinner />
+		this.props.onSetCanvas(canvas)
+	}
+
+	render = () => (
+		<div>
+			{ !this.props.canvas && <LoadingSpinner /> }
+			{ this.props.canvas && <EmailBuilder/> }
+		</div>
+	)
 }
 
 const mapStateToProps = (state) => {
