@@ -1,21 +1,21 @@
 import ACTIONS from '../types';
 import canvasHandler from './canvasHandler'
 
-const getCanvasFromLocal = () => {
-    const canvas = localStorage.getItem('tesseraeCanvas')
-    return canvas ? JSON.parse(canvas) : []
-}
-
 const initialState = {
-    canvas: getCanvasFromLocal(),
+    canvas: undefined,
     canvasStyle: { backgroundColor: 'rgb(224, 224, 224)' },
     isDesktopView: true,
     isHoveringOver: null
 };
 
 const optionsContainer = (state = initialState, action) => {
-    let canvas
     switch (action.type) {
+        case ACTIONS.SET_CANVAS:
+            return {
+                ...state,
+                canvas: action.canvas
+            }
+
         case ACTIONS.CHANGE_CANVAS_STYLE:
             return {
                 ...state,

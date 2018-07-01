@@ -8,7 +8,7 @@ import OptionsContainer from '../containers/options'
 export const EmailBuilder = (props) => (
     <div className={'builder'}>
         <div className={'builder-header'}>
-            <Header siteTitle={'Tesserae'}/>
+            <Header siteTitle={'Tesserae v2'}/>
         </div>
         <div className={'builder-wrapper'} >
             <OptionsContainer />

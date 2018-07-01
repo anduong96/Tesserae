@@ -1,5 +1,10 @@
 import ACTIONS from '../types';
 
+export const onSetCanvas = (canvas) => ({
+    type: ACTIONS.SET_CANVAS,
+    canvas
+})
+
 export const onAddToCanvas = (dropItem) => ({
     type: ACTIONS.ADD_TO_CANVAS,
     dropItem

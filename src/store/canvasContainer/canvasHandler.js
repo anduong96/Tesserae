@@ -3,7 +3,7 @@ import { generateID, deepCopy } from '../utils'
 export default class canvasHandler {
     static onAdd = function(canvas, dropItem) {
         const { removedIndex, addedIndex, payload } = dropItem
-        const newCanvas = deepCopy(canvas)
+        const newCanvas = canvas ? deepCopy(canvas) : []
         let itemToAdd = payload
 
         if (removedIndex !== null) { itemToAdd = newCanvas.splice(removedIndex, 1)[0] }
@@ -25,7 +25,6 @@ export default class canvasHandler {
     }
 
     static onClone = function(canvas, id) {
-        console.log({ canvas })
         const newCanvas = deepCopy(canvas)
         const index = newCanvas.findIndex((item) => item.id === id)
         const itemToAdd = deepCopy(newCanvas[index])

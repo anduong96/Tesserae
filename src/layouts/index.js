@@ -6,7 +6,6 @@ import { Provider } from 'react-redux'
 import { createLogger } from 'redux-logger'
 
 import { Bootstrap4 } from '../components/bootstrap'
-import Header from '../components/header'
 import rootReducer from '../store/rootReducer'
 
 import '../css/app.css'

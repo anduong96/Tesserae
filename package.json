@@ -17,13 +17,14 @@
 		"react-helmet": "^5.2.0",
 		"react-redux": "^5.0.7",
 		"react-smooth-dnd": "^0.4.8",
+		"react-spinners": "^0.3.2",
 		"redux": "^4.0.0",
 		"redux-logger": "^3.0.6"
 	},
 	"license": "MIT",
 	"scripts": {
 		"build": "gatsby build",
-		"develop": "gatsby develop",
+		"dev": "gatsby develop",
 		"format": "prettier --write 'src/**/*.js'",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"deploy": "gatsby build --prefix-paths && gh-pages -d public"
