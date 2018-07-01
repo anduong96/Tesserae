@@ -1,5 +1,7 @@
 import React from 'react'
 import imageSVG from '../../../img/icons/image.svg'
+import { mjmlTemplate, MJML } from '../../../mjmlEngine/mjmlBasics'
+import { objectDasherization } from '../../utils'
 
 export const ImageIcon = () => (
     <div className={'email-component image'}>
@@ -17,4 +19,18 @@ export const Image = ({ onSetCurrentHover,config, id }) => (
     </div>
 )
 
-export default { Image, ImageIcon}
+export const ImageMJML = ({ src, style }) => {
+    return mjmlTemplate({
+        tag: MJML.IMAGE,
+        attributes: {
+            src,
+            ...objectDasherization(style)
+        }
+    })
+}
+
+export default {
+    Image,
+    ImageIcon,
+    ImageMJML
+}

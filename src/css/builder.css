@@ -1,11 +1,19 @@
-.builder-wrapper{
+.builder-wrapper {
     width: 100%;
-    height: 100%;
+    height: 95vh;
     display: flex;
     justify-content: stretch;
 }
 
-.ant-popover{
+.builder-header {
+    height: 5vh;
+}
+
+.builder {
+    height: 100%;
+}
+
+.ant-popover {
     z-index: 9999999;
 }
 

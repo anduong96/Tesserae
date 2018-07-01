@@ -19,6 +19,7 @@
 
 .canvas-is-hungry {
     min-height: 50vh !important;
+    background-color: white !important;
 }
 
 .clicks-item:hover,

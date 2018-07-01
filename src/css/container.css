@@ -30,7 +30,7 @@
 }
 
 .canvas-wrapper .smooth-dnd-container {
-    background-color: white;
+    background-color: transparent;
     width: 590px;
     max-width: 590px;
     display: table;

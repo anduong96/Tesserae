@@ -31,10 +31,7 @@ const store = createStore(
 const Layout = ({ children, data }) => (
 	<div className={'app-main'}>
 		<Helmet title={data.site.siteMetadata.title} meta={meta} />
-		<Header siteTitle={data.site.siteMetadata.title} />
 		<Bootstrap4 enable />
-
-		{/* Main */}
 		<div className='app-body' >
 			<Provider store={store} >
 				{children()}

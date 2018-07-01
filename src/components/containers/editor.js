@@ -7,13 +7,13 @@ import { GeneralSettings } from '../containers/editorComponents/generalSettings'
 import { NoSettings } from '../containers/editorComponents/noSettings'
 import { ImageSettings } from '../containers/editorComponents/imageSettings'
 import TitleSettings from '../containers/editorComponents/titleSettings'
-import ExportSettings from '../containers/editorComponents/exportSettings'
 import {
     onAddToCanvas,
     onRemoveFromCanvas,
     onCloneFromCanvas,
     onChangeComponentConfig,
-    onFocusOnCanvasComponent
+    onFocusOnCanvasComponent,
+    onChangeCanvasStyle
 } from '../../store/canvasContainer/actions'
 
 export class Editor extends Component {
@@ -51,9 +51,6 @@ export class Editor extends Component {
         return (
             <div className={'editor-wrapper'} >
                 <Collapse bordered={false} defaultActiveKey={['general-settings']}>
-                    <Collapse.Panel header={'Main'} key={'export-settings'}>
-                        <ExportSettings />
-                    </Collapse.Panel>
                     <Collapse.Panel header={'Container'} key={'general-settings'}>
                         <GeneralSettings {...generalSettingsConfig} />
                     </Collapse.Panel>
@@ -75,7 +72,8 @@ const mapDispatchToProps = (dispatch) => ({
         onRemoveFromCanvas,
         onCloneFromCanvas,
         onChangeComponentConfig,
-        onFocusOnCanvasComponent
+        onFocusOnCanvasComponent,
+        onChangeCanvasStyle
     }, dispatch),
 })
 
