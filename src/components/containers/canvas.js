@@ -52,7 +52,11 @@ export class EmailCanvas extends Component {
         }
 
         return (
-            <div className={`canvas-wrapper${isDragging ? ' is-dragging':''}`} style={canvasIsWhite ? darkStyle : canvasStyle}>
+            <div
+                id={'canvas-container-wrapper'}
+                className={`canvas-wrapper${isDragging ? ' is-dragging':''}`}
+                style={canvasIsWhite ? darkStyle : canvasStyle}
+            >
                 <Container
                     orientation={'vertical'}
                     dropClass="opacity-ghost-drop"
