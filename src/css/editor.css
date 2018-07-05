@@ -34,3 +34,47 @@
     border-color: red;
     color: red
 }
+
+.canvas-select {
+    padding: 0px 5px;
+}
+
+.canvas-select-asset-container {
+    height: 78vh;
+    overflow-y: scroll;
+}
+
+.canvas-select-card {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.canvas-select-card {
+    padding: 5px;
+}
+
+.canvas-select-card:hover {
+    border-color: #1890ff;
+}
+
+.canvas-select-card.active {
+    border-color: rgb(67, 233, 67);
+}
+
+.canvas-select-add-container {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+.canvas-select-card-img {
+    width: 200px;
+}
+
+.ant-card-body {
+    padding: 10px 5px;
+}
+
+.ant-card-meta-title {
+    word-wrap: break-word;
+}

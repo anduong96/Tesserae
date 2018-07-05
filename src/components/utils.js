@@ -47,13 +47,28 @@ export const objectDasherization = (target) => {
 
 export const dasherization = (targetStr) => targetStr.replace(/\.?([A-Z]+)/g,(x,y) => `-${y.toLowerCase()}`).replace(/^-/, '');
 
+export const getFromStorage = ({ target, defaultValue, callback }) => {
+    let out = defaultValue
+    if ( typeof window !== 'undefined' ) {
+        const itemExist = window.localStorage.getItem(target)
+        if (itemExist) {
+            out = JSON.parse(itemExist)
+        } else {
+            window.localStorage.setItem(target, JSON.stringify(defaultValue))
+        }
+    } else {
+        out =  window.localStorage.getItem(target)
+    }
 
-export default {
-    toTitle,
-    downloadFile,
-    hasContent,
-    isFunction,
-    objToHTMlAttribute,
-    dasherization,
-    objectDasherization
+    if ( typeof callback === 'function' ) {
+        callback(out)
+    } else {
+        return out
+    }
 }
+
+export const generateID = () => 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) =>  {
+    const r = Math.random()*16|0
+    const v = c == 'x' ? r : (r&0x3|0x8);
+    return v.toString(16);
+});
