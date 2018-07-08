@@ -16,5 +16,8 @@ export const Blank = ({ onSetCurrentHover, id }) => (
 )
 
 
-export default { Blank, BlankIcon }
+export default {
+    Blank,
+    BlankIcon
+}
 

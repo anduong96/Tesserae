@@ -19,4 +19,7 @@ export const Title = ({ onSetCurrentHover, config, id }) => (
     </div>
 )
 
-export default { Title, TitleIcon }
+export default {
+    Title,
+    TitleIcon
+}

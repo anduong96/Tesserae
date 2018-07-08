@@ -4,7 +4,7 @@
     background-color: transparent;
     text-align: center;
     display: flow-root;
-    vertical-align:middle;
+    vertical-align: middle;
     margin: auto;
     padding-bottom: 10px;
     padding-top: 10px;
@@ -44,12 +44,11 @@
     width: 25px;
 }
 
-
 .image-text-top {
     display: inline-table;
 }
 
-.stack{
+.stack {
     display: block;
     height: 25px;
 }

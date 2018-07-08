@@ -48,11 +48,15 @@
 }
 
 @-webkit-keyframes slide {
-    100% { left: 0; }
+    100% {
+        left: 0;
+    }
 }
 
 @keyframes slide {
-    100% { left: 0; }
+    100% {
+        left: 0;
+    }
 }
 
 .hovering-menu {
@@ -77,11 +81,9 @@
     border-color: rgb(255, 186, 13);
 }
 
-
 .clone-button:hover,
 .clone-button:active,
 .clone-button:focus {
     color: #18f018;
     border-color: #18f018;
 }
-

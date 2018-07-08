@@ -102,6 +102,7 @@ export const CommonSettings = ({
         style: config.style,
         onStyleChange: (style) => onConfigChange(id, { style })
     }
+
     return (
         <div className={'common-settings'}>
             { yesBackground && <BackgroundSettings {...propsSettings}/> }

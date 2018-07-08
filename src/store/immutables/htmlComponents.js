@@ -15,8 +15,7 @@ const TITLE = {
                 margin: 0
             }
         },
-        style: {
-        }
+        style: {}
     }
 }
 
@@ -37,16 +36,14 @@ const DIVIDER = {
 const BUTTON = {
     name: 'button',
     config: {
-        buttons: [
-            {
-                text: 'Button',
-                href: 'https://github.paypal.com/aduong',
-                style: {
-                    backgroundColor: 'red'
-                },
-            }
-        ],
-        style:{
+        buttons: [{
+            text: 'Button',
+            href: 'https://github.com/anduong96',
+            style: {
+                backgroundColor: 'red'
+            },
+        }],
+        style: {
             textAlign: 'center',
         },
         limit: 5
@@ -56,7 +53,7 @@ const BUTTON = {
 const IMAGE = {
     name: 'image',
     config: {
-        src: 'http://via.placeholder.com/600x200',
+        src: 'https://imgplaceholder.com/600x200/a496ff/333333/fa-image',
         style: {
             paddingTop: 0,
             paddingBottom: 0,
@@ -70,7 +67,7 @@ const IMAGE_TEXT_RIGHT = {
     name: 'imageTextRight',
     config: {
         image: {
-            src: 'http://via.placeholder.com/300x200',
+            src: 'https://imgplaceholder.com/300x200/a496ff/333333/fa-image',
             style: {
                 paddingLeft: 5,
                 margin: 0,
@@ -94,7 +91,7 @@ const IMAGE_TEXT_LEFT = {
     name: 'imageTextLeft',
     config: {
         image: {
-            src: 'http://via.placeholder.com/300x200',
+            src: 'https://imgplaceholder.com/300x200/a496ff/333333/fa-image',
             style: {
                 paddingRight: 5,
                 margin: 0,
@@ -117,31 +114,28 @@ const IMAGE_TEXT_LEFT = {
 const DOUBLE_IMAGE_TEXT = {
     name: 'doubleImageText',
     config: {
-        options: [
-            {
+        options: [{
                 image: {
-                    src: 'http://via.placeholder.com/280x150',
+                    src: 'https://imgplaceholder.com/280x150/a496ff/333333/fa-image',
                     style: {
                         padding: 5
                     }
                 },
                 descript: {
                     text: 'Enter text',
-                    style: {
-                    }
+                    style: {}
                 }
             },
             {
                 image: {
-                    src: 'http://via.placeholder.com/280x150',
+                    src: 'https://imgplaceholder.com/280x150/a496ff/333333/fa-image',
                     style: {
                         padding: 5
                     }
                 },
                 descript: {
                     text: 'Enter text',
-                    style: {
-                    }
+                    style: {}
                 }
             }
         ],
@@ -155,44 +149,42 @@ const DOUBLE_IMAGE_TEXT = {
 const TRIPLE_IMAGE_TEXT = {
     name: 'tripleImageText',
     config: {
-        options: [
-            {
+
+
+        options: [{
                 image: {
-                    src: 'http://via.placeholder.com/180x100',
+                    src: 'https://imgplaceholder.com/180x100/a496ff/333333/fa-image',
                     style: {
                         padding: 5
                     }
                 },
                 descript: {
                     text: 'Enter text',
-                    style: {
-                    }
+                    style: {}
                 }
             },
             {
                 image: {
-                    src: 'http://via.placeholder.com/180x100',
+                    src: 'https://imgplaceholder.com/180x100/a496ff/333333/fa-image',
                     style: {
                         padding: 5
                     }
                 },
                 descript: {
                     text: 'Enter text',
-                    style: {
-                    }
+                    style: {}
                 }
             },
             {
                 image: {
-                    src: 'http://via.placeholder.com/180x100',
+                    src: 'https://imgplaceholder.com/180x100/a496ff/333333/fa-image',
                     style: {
                         padding: 5
                     }
                 },
                 descript: {
                     text: 'Enter text',
-                    style: {
-                    }
+                    style: {}
                 }
             }
         ],
@@ -235,4 +227,3 @@ export const builder = {
         BLANK
     ]
 }
-

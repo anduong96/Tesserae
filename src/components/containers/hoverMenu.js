@@ -7,14 +7,17 @@ const generalButtonSettings = {
     size: 'small',
 
 }
+
 const closeButtonSettings = {
     className: 'close-button',
     ...generalButtonSettings
 }
+
 const removeButtonSettings = {
     className: 'remove-button',
     ...generalButtonSettings
 }
+
 const cloneButtonSettings = {
     className: 'clone-button',
     ...generalButtonSettings

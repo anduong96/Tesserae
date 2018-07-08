@@ -7,24 +7,32 @@ export const Click = ({ onSetCurrentHover, config, id }) => (
         onClick={() => console.log({ id })}
         onMouseEnter={() => onSetCurrentHover(true, id)}
     >
-        {config.buttons.map(( item, index ) =>{
-            if(index <= config.limit){
+        { config.buttons.map(( item, index ) => {
+            if(index <= config.limit) {
                 return (
-                    <a href={item.href} target={'_blank'} key={index} className={'clicks-item'} style={item.style}>
+                    <a
+                        href={item.href}
+                        target={'_blank'}
+                        key={index}
+                        className={'clicks-item'}
+                        style={item.style}
+                    >
                         {item.text}
                     </a>
                 )
             }
-        })}
+        }) }
     </div>
 )
-
 
 export const ClickIcon = () => (
     <div className={'email-component click'}>
-        <img src={clickSVG} className={'click-icon'} />
+         <img src={clickSVG} className={'click-icon'} />
     </div>
 )
 
-export default { Click, ClickIcon }
+export default {
+    Click,
+    ClickIcon
+}
 

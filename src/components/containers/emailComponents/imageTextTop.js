@@ -8,8 +8,8 @@ import textSVG from '../../../img/icons/text.svg'
 
 export const ImageTextTopIcon = () => (
     <div className={'image-text-top'}>
-        <img src={imageSVG} className={'image-icon stack'} />
-        <img src={textSVG} className={'text-icon stack'} />
+         <img src={imageSVG} className={'image-icon stack'} />
+         <img src={textSVG} className={'text-icon stack'} />
     </div>
 )
 
@@ -20,4 +20,7 @@ export const ImageTextTop = ({ image, descript, key }) => (
     </div>
 )
 
-export default { ImageTextTopIcon, ImageTextTop }
+export default {
+    ImageTextTopIcon,
+    ImageTextTop
+}

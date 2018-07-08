@@ -2,19 +2,12 @@
     width: 150px;
     height: 100%;
     background-color: white;
-    /* border-right-style: solid;
-    border-right-width: 1px;
-    border-right-color: rgb(46, 46, 46); */
 }
 
 .editor-wrapper {
     min-width: 20vw;
     max-width: 20vw;
-    /* border-left-width: 1px;
-    border-left-style: solid;
-    border-right-color: rgb(46, 46, 46); */
 }
-
 
 .canvas-wrapper {
     padding-top: 20px;
@@ -44,17 +37,17 @@
     text-align: center;
 }
 
-.email-component:hover{
+.email-component:hover {
     cursor: grab;
 }
 
 .email-component:focus,
 .email-component:active,
-.is-dragging{
+.is-dragging {
     cursor: grabbing !important;
 }
 
-.smooth-dnd-ghost{
+.smooth-dnd-ghost {
     opacity: 0.8;
-    box-shadow: 3px 3px 10px 3px rgba(0,0,0,0.3);
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.3);
 }
