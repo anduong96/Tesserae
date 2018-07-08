@@ -21,4 +21,7 @@ export const DoubleImageText = ({ onSetCurrentHover, config, id }) => (
     </div>
 )
 
-export default { DoubleImageText, DoubleImageTextIcon }
+export default {
+    DoubleImageText,
+    DoubleImageTextIcon
+}

@@ -11,26 +11,24 @@ import '../css/icons.css'
 import '../css/canvas.css'
 import '../css/editor.css'
 
-const LoadingSpinner = (test) => (
-	<div className={'overlay-spinner'}>
-		<PacmanLoader color={'#c141f4'} loading />
-	</div>
+const LoadingSpinner = () => (
+    <div className={'overlay-spinner'}>
+        <PacmanLoader color={'#c141f4'} loading />
+    </div>
 )
 
 export class IndexPage extends Component {
-	componentDidMount = () => {
-		getFromStorage({
-			target: 'tesseraeCanvas',
-			defaultValue: [],
-			callback: (res) => this.props.onSetCanvas(res)
-		})
-	}
+    componentDidMount = () => getFromStorage({
+        target: 'tesseraeCanvas',
+        defaultValue: [],
+        callback: (res) => this.props.onSetCanvas(res)
+    })
 
-	render = () => this.props.canvas ? <EmailBuilder /> : <LoadingSpinner />
+    render = () => this.props.canvas ? <EmailBuilder /> : <LoadingSpinner />
 }
 
 const mapStateToProps = (state) => ({
-	canvas: state.canvasContainer.canvas
+    canvas: state.canvasContainer.canvas
 })
 
 const mapDispatchToProps = (dispatch) => ({
@@ -40,6 +38,6 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 export default connect(
-	mapStateToProps,
-	mapDispatchToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(IndexPage)

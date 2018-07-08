@@ -15,8 +15,7 @@ const TITLE = {
                 margin: 0
             }
         },
-        style: {
-        }
+        style: {}
     }
 }
 
@@ -37,16 +36,14 @@ const DIVIDER = {
 const BUTTON = {
     name: 'button',
     config: {
-        buttons: [
-            {
-                text: 'Button',
-                href: 'https://github.com/anduong96',
-                style: {
-                    backgroundColor: 'red'
-                },
-            }
-        ],
-        style:{
+        buttons: [{
+            text: 'Button',
+            href: 'https://github.com/anduong96',
+            style: {
+                backgroundColor: 'red'
+            },
+        }],
+        style: {
             textAlign: 'center',
         },
         limit: 5
@@ -117,8 +114,7 @@ const IMAGE_TEXT_LEFT = {
 const DOUBLE_IMAGE_TEXT = {
     name: 'doubleImageText',
     config: {
-        options: [
-            {
+        options: [{
                 image: {
                     src: 'https://imgplaceholder.com/280x150/a496ff/333333/fa-image',
                     style: {
@@ -127,8 +123,7 @@ const DOUBLE_IMAGE_TEXT = {
                 },
                 descript: {
                     text: 'Enter text',
-                    style: {
-                    }
+                    style: {}
                 }
             },
             {
@@ -140,8 +135,7 @@ const DOUBLE_IMAGE_TEXT = {
                 },
                 descript: {
                     text: 'Enter text',
-                    style: {
-                    }
+                    style: {}
                 }
             }
         ],
@@ -157,8 +151,7 @@ const TRIPLE_IMAGE_TEXT = {
     config: {
 
 
-        options: [
-            {
+        options: [{
                 image: {
                     src: 'https://imgplaceholder.com/180x100/a496ff/333333/fa-image',
                     style: {
@@ -167,8 +160,7 @@ const TRIPLE_IMAGE_TEXT = {
                 },
                 descript: {
                     text: 'Enter text',
-                    style: {
-                    }
+                    style: {}
                 }
             },
             {
@@ -180,8 +172,7 @@ const TRIPLE_IMAGE_TEXT = {
                 },
                 descript: {
                     text: 'Enter text',
-                    style: {
-                    }
+                    style: {}
                 }
             },
             {
@@ -193,8 +184,7 @@ const TRIPLE_IMAGE_TEXT = {
                 },
                 descript: {
                     text: 'Enter text',
-                    style: {
-                    }
+                    style: {}
                 }
             }
         ],
@@ -237,4 +227,3 @@ export const builder = {
         BLANK
     ]
 }
-

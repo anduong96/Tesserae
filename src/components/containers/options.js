@@ -18,7 +18,7 @@ export class OptionsContainer extends Component {
                 onDragEnd={this.onDragEnd}
                 className={'options-container'}
             >
-                {this.props.emailComponents.map((configurations, index) =>(
+                {this.props.emailComponents.map((configurations, index) => (
                     <Draggable key={index}>
                         <div className="draggable-item">
                             <OptionComponents

@@ -3,7 +3,9 @@ import canvasHandler from './canvasHandler'
 
 const initialState = {
     canvas: undefined,
-    canvasStyle: { backgroundColor: 'rgb(224, 224, 224)' },
+    canvasStyle: {
+        backgroundColor: 'rgb(224, 224, 224)'
+    },
     isDesktopView: true,
     isHoveringOver: null
 };
@@ -25,19 +27,19 @@ const optionsContainer = (state = initialState, action) => {
         case ACTIONS.ADD_TO_CANVAS:
             return {
                 ...state,
-                canvas: canvasHandler.onAdd( state.canvas, action.dropItem )
+                canvas: canvasHandler.onAdd(state.canvas, action.dropItem)
             }
 
         case ACTIONS.REMOVE_FROM_CANVAS:
             return {
                 ...state,
-                canvas: canvasHandler.onRemove( state.canvas, action.componentID )
+                canvas: canvasHandler.onRemove(state.canvas, action.componentID)
             }
 
         case ACTIONS.CLONE_FROM_CANVAS:
             return {
                 ...state,
-                canvas: canvasHandler.onClone( state.canvas, action.componentID )
+                canvas: canvasHandler.onClone(state.canvas, action.componentID)
             }
 
         case ACTIONS.CHANGE_COMPONENT_CONFIG:
@@ -46,13 +48,13 @@ const optionsContainer = (state = initialState, action) => {
                 canvas: canvasHandler.onChangeComponentConfig(
                     state.canvas,
                     action.componentID,
-                    action.proposedConfig )
+                    action.proposedConfig)
             }
 
         case ACTIONS.FOCUS_ON_CANVAS_COMPONENT:
             return {
                 ...state,
-                isHoveringOver: action.isFocus? action.componentID : null
+                isHoveringOver: action.isFocus ? action.componentID : null
             }
 
         default:

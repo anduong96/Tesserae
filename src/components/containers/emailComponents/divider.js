@@ -3,7 +3,7 @@ import dividerSVG from '../../../img/icons/divider.svg'
 
 export const DividerIcon = () => (
     <div className={'email-component divider'} >
-        <img src={dividerSVG} className={'divider-icon'} />
+         <img src={dividerSVG} className={'divider-icon'} />
     </div>
 )
 
@@ -18,4 +18,7 @@ export const Divider = ({ onSetCurrentHover, id }) => (
 )
 
 
-export default { Divider, DividerIcon }
+export default {
+    Divider,
+    DividerIcon
+}

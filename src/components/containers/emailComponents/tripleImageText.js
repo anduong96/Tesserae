@@ -23,4 +23,7 @@ export const TripleImageText = ({ onSetCurrentHover, config, id }) => (
 )
 
 
-export default { TripleImageText, TripleImageTextIcon }
+export default {
+    TripleImageText,
+    TripleImageTextIcon
+}

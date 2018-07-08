@@ -5,5 +5,3 @@ const immutables = () => ({
 });
 
 export default immutables;
-
-

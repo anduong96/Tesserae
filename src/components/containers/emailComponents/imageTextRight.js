@@ -4,8 +4,8 @@ import textSVG from '../../../img/icons/text.svg'
 
 export const ImageTextRightIcon = () => (
     <div className={'email-component image-text-right'}>
-        <img src={textSVG} className={'text-icon'} />
-        <img src={imageSVG} className={'image-icon'} />
+         <img src={textSVG} className={'text-icon'} />
+         <img src={imageSVG} className={'image-icon'} />
     </div>
 )
 
@@ -22,4 +22,7 @@ export const ImageTextRight = ({ onSetCurrentHover, config, id }) => (
 )
 
 
-export default { ImageTextRight, ImageTextRightIcon }
+export default {
+    ImageTextRight,
+    ImageTextRightIcon
+}

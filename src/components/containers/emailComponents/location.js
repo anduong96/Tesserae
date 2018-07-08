@@ -22,4 +22,7 @@ export const Location = ({ onSetCurrentHover, config, id }) => (
     </div>
 )
 
-export default { Location, LocationIcon }
+export default {
+    Location,
+    LocationIcon
+}
